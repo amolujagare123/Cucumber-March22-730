@@ -51,7 +51,9 @@ public class LoginDemoSD {
     }
 
 
-    @When("I enter {string} as username and {string} as  password")
+
+
+   @When("I enter {string} as username and {string} as  password")
     public void i_enter_as_username_and_as_password(String user, String pass) {
 
         System.out.println("Username:"+user);

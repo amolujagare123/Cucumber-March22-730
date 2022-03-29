@@ -1,5 +1,11 @@
 Feature: All Login scenarios
 
+  # this will run before every scenario
+  Background: prerequisite for all scenarios
+    Given  I open the browser
+    And  I maximize it
+
+
   @realLogin
   Scenario: To test the functionality of login button for valid input
     Given I am on login page
@@ -30,3 +36,26 @@ Feature: All Login scenarios
     When I enter "" as username and "" as  password
     And I click on login
     Then I should get another error message
+
+    @userReg
+    Scenario: to test the functionality of submit button for user registration
+      Given I am on user registration page
+      When I enter below data
+      | Amol | Ujagare | 89989 | amol@gmail.com |
+      And I click on submit button
+      Then user should be registered
+
+      @userReg2
+      Scenario Outline: To test the functionality of submit button on subscribe page
+        Given I am on subscribe page
+        When I enter <name> , <contactNo> , <emailID>
+        And I click on subscribe button
+        Then user should be subscribe
+
+        Examples:
+          | name   | contactNo | emailID     |
+          | Amol   | 878117844 | a@gmail.com |
+          | Pravin | 878722844 | p@gmail.com |
+          | Rahul  | 873787844 | r@gmail.com |
+          | Sonali | 178787844 | s@gmail.com |
+
