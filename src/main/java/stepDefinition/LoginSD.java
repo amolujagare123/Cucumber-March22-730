@@ -42,7 +42,7 @@ public class LoginSD {
     public void i_should_be_redirected_to_the_home_page() {
         System.out.println("I should be redirected to the home page");
 
-        String expected = "https://stock.scriptinglogic.net/dashboard.php";
+        String expected = "https://stock.scriptinglogic.net/dashboard.php1";
         String actual = driver.getCurrentUrl();
         Assert.assertEquals("THis is not a dashboard",expected,actual);
     }
